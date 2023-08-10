@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+import TopNavContainer from "../containers/TopNavContainer";
+import MenuBarContainer from "../containers/MenuBarContainer";
 
 function HomePage() {
   const [products, setProducts] = useState([])
@@ -20,14 +22,23 @@ function HomePage() {
   }, [])
 
   return (
-    <div>
-      <ul>
-        {products.map(product =>(
-          <li key={product.id}> {product.title}</li>
-        ))}
+    <>
+      <div>
+        <TopNavContainer />
+      </div>
+      <div>
+      <MenuBarContainer />
+      </div>
+      <div>
+        <ul>
+          {products.map(product =>(
+            <li key={product.id}> {product.title}</li>
+          ))}
         
-      </ul>
-    </div>
+        </ul>
+      </div>
+    </>
+    
   )
 
 }
