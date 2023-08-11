@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopNavContainer from "../containers/TopNavContainer";
 import MenuBarContainer from "../containers/MenuBarContainer";
+import RandomProductsContainer from "../containers/RandomProductsContainer";
 
 function HomePage() {
   const [products, setProducts] = useState([])
@@ -27,7 +28,10 @@ function HomePage() {
         <TopNavContainer />
       </div>
       <div>
-      <MenuBarContainer />
+        <MenuBarContainer />
+      </div>
+      <div>
+        <RandomProductsContainer />
       </div>
       <div>
         <ul>

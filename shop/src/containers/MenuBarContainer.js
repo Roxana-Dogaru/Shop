@@ -20,13 +20,13 @@ function MenuBarContainer() {
   }, [])
 
   return (
-    <div >
-      <ul>
+    <div className="d-flex justify-content-around">
+      
         {categories.map(category =>(
-          <li > {category}</li>
+          <p > {category}</p>
         ))}
         
-      </ul>
+      
     </div>
   )
 
