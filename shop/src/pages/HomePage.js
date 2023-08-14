@@ -1,50 +1,52 @@
 import React, { useEffect, useState } from "react";
+import mockData from "../assets/mock";
 import TopNavContainer from "../containers/TopNavContainer";
 import MenuBarContainer from "../containers/MenuBarContainer";
 import RandomProductsContainer from "../containers/RandomProductsContainer";
+import ProductContainer from "../containers/ProductContainer";
+import Carousel from "../containers/Carousel";
 
 function HomePage() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(mockData)
+  const [searchValue, setSearchValue] = useState("");
+  const [title, setTitle] = useState("Latest products");
 
+  const handleInputChange = (e) => {
+    setSearchValue(e.target.value);
+    setTitle(`Products with: ${e.target.value}`);
+  };
 
- 
-  const fetchData = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setProducts(data)
-      })
-  }
+  const fetchData = (searchValue) => 
+    fetch(`https://fakestoreapi.com/products=${searchValue}`)
+      .then((response) => response.json())
+      .then((responseJSON) => setProducts(responseJSON));
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData(searchValue);
+  }, [searchValue]);
+
 
   return (
     <>
-      <div>
-        <TopNavContainer />
-      </div>
+      <TopNavContainer searchValue={searchValue} handleInputChange={handleInputChange} />
+      <div className="">
       <div>
         <MenuBarContainer />
       </div>
       <div>
-        <RandomProductsContainer />
+        <Carousel />
       </div>
       <div>
-        <ul>
-          {products.map(product =>(
-            <li key={product.id}> {product.title}</li>
-          ))}
-        
-        </ul>
+        <RandomProductsContainer />
       </div>
+        <ProductContainer data={products} title={title} />
+      </div>
+      
     </>
     
-  )
+  );
+  
 
 }
 
-export default HomePage
+export default HomePage;

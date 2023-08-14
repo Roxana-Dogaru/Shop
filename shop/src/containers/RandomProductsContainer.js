@@ -5,7 +5,6 @@ const RandomProductsContainer = () => {
   return (
     <div >
       <RandomProductComponent />
-      
     </div>
   );
 };
