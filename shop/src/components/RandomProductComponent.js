@@ -1,52 +1,48 @@
 import React, { useEffect, useState } from "react";
 
-
 const style= {
   image: {
-    width: 200,
-    height: 200
+    width: 100,
+    height: 100
 
   }
 }
-
 const RandomProductComponent = () => {
-  const [products, setProduct] = useState([]);
-
-  const fetchData = () =>
-    fetch(`https://fakestoreapi.com/products?limit=8`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data)); 
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return (
-    
-     
-      
+    const [product, setProduct] = useState([]);
+  
+    const fetchData = () =>
+      fetch(`https://fakestoreapi.com/products?limit=12`)
+        .then((response) => response.json())
+        .then((data) => setProduct(data)); 
+  
+    useEffect(() => {
+      fetchData();
+    }, []);
+    return (
+       
+      <div className="container p-4">
+        <div className="row">
+          {product.map(product =>(
+            <figure key={product.id} className="figure col d-flex flex-column justify-content-end border m-2">
+              <img className="card-img-top"  src={product.image} alt={product.title} 
+                style={style.image}></img>
+              <figcaption  className="figure-caption text-white-50 text-center fw-bold d-none d-md-block"> 
+                
+                 {product.title}
+                
+              </figcaption>
+            </figure>
+                            
+          ))}
+       
+        </div>
+      </div>    
         
-    <div className="d-flex">
-      {products.map(product =>(
-         [<div className="card" style={{width: 300}}>
-            <img className="card-img-top" key={product.id} src={product.image} alt={product.title} style={style.image}></img>
-            <div className="card-body">
-              <h5 key={product.id}> {product.title}</h5>
-              <h5 key={product.id}> {product.price}</h5>
-              
-            </div>
-          </div>
-         ]
-         
-         
         
-           
-      ))}
-   
-    </div>
-      
+          
+        
+      );
+    };
     
-  );
-};
-
-export default RandomProductComponent;
+    export default RandomProductComponent;
+    

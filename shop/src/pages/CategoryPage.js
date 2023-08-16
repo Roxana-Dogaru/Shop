@@ -1,13 +1,14 @@
 import React from "react";
 import TopNavContainer from "../containers/TopNavContainer";
 
-const FavoritesProductsPage = () => {
+
+const CategoryPage = () => {
   
     return (
       <>
         <TopNavContainer />
       <div >
-        <h1 >this will be the favorite products page</h1>
+        
         
       </div>
       </>
@@ -15,5 +16,5 @@ const FavoritesProductsPage = () => {
     );
   };
 
-export default FavoritesProductsPage
+export default CategoryPage
 

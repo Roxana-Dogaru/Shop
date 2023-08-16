@@ -1,56 +1,69 @@
 import React from "react";
-import logo from "../assets/img/logo.jpg"
-import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/img/logo.jpg";
+import home from "../assets/img/home.png";
+import heart from "../assets/img/heart.png"
+import { Link} from "react-router-dom";
+import MenuBarComponent from "../components/MenuBarComponent";
 
-const TopNavContainer = ({ searchValue, handleInputChange, noSearchBar }) => {
-  const location = useLocation();
+const TopNavContainer = ({ searchValue, handleInputChange, noSearchBar })  => {
+    
+    return (
+    <div>
+        <div className="d-flex justify-content-between p-2 sticky-top bg-white align-items-center">
+            <div className="navbar-brand" style={{ width: "80px", height: "60px" }}>
+                <Link to="/">
+                    <img src={logo} className="img-fluid h-100"  alt="logo" />
+                </Link>
+                
+                    
+            </div>
 
-  return (
-    <div className="d-flex justify-content-between p-2 sticky-top bg-white align-items-center">
-      <div className="navbar-brand" style={{ width: "100px", height: "100px" }}>
-        <Link to="/">
-          <img src={logo} className="img-fluid h-100" alt="logo" />
-        </Link>
-      </div>
-
-      <div>
-        <h3>Irishop</h3>
-      </div>
-      <div>
-        {!noSearchBar ? (
-          <div className=" text-muted w-100">
-            <form className="form form-control-group d-flex">
-              <input
-                type="text"
-                className="form-control form-control-lg self-center border-bottom border rounded-50"
-                placeholder=" Search"
-                value={searchValue}
-                onChange={handleInputChange}
-              ></input>
-            </form>
-          </div>
-        ) : (
-          ""
-        )}
-        {location.pathname !== "/" && (
-          <div className="d-flex gap-4 ms-auto">
-            <Link
-              to="/"
-              className="btn bg-white text-start border-bottom rounded-0 text-dark fw-bold px-0"
-            >
-              🏠 Back to Home
+            <Link to="/" style={{color:"black", textDecoration:"none",fontWeight:"bolder" }}>        
+                <h3>Irishop</h3>
             </Link>
-            <Link
-              to="/favorites"
-              className="btn bg-white text-start border-bottom rounded-0 text-dark fw-bold px-0"
-            >
-              ♡ Favorites
-            </Link>
-          </div>
-        )}
-      </div>
+
+            <div className="d-flex">
+                <div>
+                {!noSearchBar ? (
+                    <div className=" text-muted w-100">
+                        <form className="form form-control-group d-flex">
+                            <input
+                            type="text"
+                            className="form-control form-control-lg self-center border-bottom border rounded-50"
+                            placeholder=" Search"
+                            value={searchValue}
+                            onChange={handleInputChange}
+        
+                            
+                            ></input>
+                        </form>
+                    </div>
+                ):("")}
+                </div>
+                
+                <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
+                    <Link to="/" >
+                    <img src={home} className="img-fluid "  alt="home" />
+                    </Link>
+                
+                </div>
+                <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
+                    <Link to="/favorites" >
+                    <img src={heart} className="img-fluid "  alt="heart" />
+                    </Link>
+                
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <MenuBarComponent />
+        </div>
+       
     </div>
-  );
-};
+        
 
-export default TopNavContainer;
+    )
+}
+
+export default TopNavContainer
