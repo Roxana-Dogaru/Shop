@@ -6,15 +6,15 @@ const style= {
     width: 200,
     height: 200
 
-  }
+  },
 }
-const CategoryComponent = () => {
+const CategoryComponent = ({categoryName}) => {
     
     const [categoryProducts, setCategoryProducts] = useState([])
    
   
     const fetchData = () =>
-      fetch(`https://fakestoreapi.com/products/category/`)
+      fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
         .then((response) => response.json())
         .then((data) => setCategoryProducts(data)); 
   

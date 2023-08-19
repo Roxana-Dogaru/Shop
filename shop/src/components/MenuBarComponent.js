@@ -24,7 +24,7 @@ function MenuBarComponent() {
         <div className="d-flex justify-content-around">
         
         {categories.map(category =>(
-          < Link to ="/category" >
+          < Link to ="/category/categoryName" >
           <button id ="MenuButton" className="btn btn-light" key={categories.item}> {category}</button>
           </Link>
         ))}         

@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from "react";
-import TopNavContainer from "../containers/TopNavContainer";
-import CategoryContainer from "../containers/CategoryContainer";
 import { useParams } from "react-router-dom";
+import ProductContainer from "../components/ProductComponent";
+import TopNavContainer from "../containers/TopNavContainer";
 
-const CategoryPage = () => {
-  let { categoryName } = useParams();
+const ProductPage = () => {
+  let { idProduct } = useParams();
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idProduct}`)
       .then((response) => {
         return response.json();
       })
       .then((responseJSON) => {
         setData(responseJSON);
       });
-  }, [categoryName]);
+  }, [idProduct]);
 
   return (
     <>
       <TopNavContainer noSearchBar={true} />
       {data.products &&
         data.products.map((item) => (
-          <CategoryContainer
+          <ProductContainer
             key={item.id}            
             title={item.title}
-            image={item.image}           
+            image={item.image}            
             data={item}
           />
         ))}
     </>
   );
 };
-export default CategoryPage
 
+export default ProductPage

@@ -7,8 +7,8 @@ import jewelry from "../assets/img/jewelry.jpg";
 import electronics from "../assets/img/electronics.jpg";
 
 const CarouselImages = () => {
-    return (
-        <div style={{ display: 'block',  padding: 30,}}>
+  return (
+    <div style={{ display: 'block',  padding: 30,}}>
       
       <Carousel >
         <Carousel.Item interval={7500}>
