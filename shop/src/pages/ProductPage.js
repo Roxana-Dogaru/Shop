@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ProductContainer from "../components/ProductComponent";
+import ProductContainer from "../containers/ProductContainer";
 import TopNavContainer from "../containers/TopNavContainer";
 
 const ProductPage = () => {
-  let { idProduct } = useParams();
+  let { id } = useParams();
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idProduct}`)
+    fetch(`https://fakestoreapi.com/products/${id}`)
       .then((response) => {
         return response.json();
       })
       .then((responseJSON) => {
         setData(responseJSON);
       });
-  }, [idProduct]);
+  }, [id]);
 
   return (
     <>
       <TopNavContainer noSearchBar={true} />
-      {data.products &&
-        data.products.map((item) => (
-          <ProductContainer
-            key={item.id}            
-            title={item.title}
-            image={item.image}            
-            data={item}
-          />
-        ))}
+      
+          <figure key={data.id} className="figure col d-flex flex-column justify-content-end border m-2">
+          <img className="card-img-top"  src={data.image} alt={data.title} 
+          ></img>
+          <div>
+            {data.title}
+          </div>
+          <div>
+            {data.price}
+          </div>                
+          
+        </figure>
+        
     </>
   );
 };

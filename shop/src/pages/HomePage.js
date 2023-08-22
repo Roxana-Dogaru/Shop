@@ -9,7 +9,7 @@ import ProductsContainer from "../containers/ProductsContainer";
 function HomePage () {
     const [products, setProducts] = useState(mockData);
     const [searchValue, setSearchValue] = useState("");
-    const [title, setTitle] = useState("Best sellers");
+    const [title, setTitle] = useState("");
 
     const handleInputChange = (e) => {
         setSearchValue(e.target.value);
@@ -28,10 +28,11 @@ function HomePage () {
     return(
         <>
             <TopNavContainer searchValue={searchValue} handleInputChange={handleInputChange} /> 
-            <div> <CarouselImages /></div>
+            <div><ProductsContainer data={products} title={title} /> </div>
+            <div> <CarouselImages /></div>            
             <div> <RandomProductsContainer /> </div>
 
-            <div><ProductsContainer data={products} title={title} /> </div>
+            
         </>
         
         

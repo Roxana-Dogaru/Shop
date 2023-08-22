@@ -1,28 +1,24 @@
-import ProductComponent from "../components/ProductComponent";
-import TitleComponent from "../components/TitleComponent";
 
-const ProductContainer = (props) => {
+import TitleComponent from "../components/TitleComponent";
+import { Link } from "react-router-dom";
+
+const ProductsContainer = (props) => {
     return (
         <div>
             <div>
                 <TitleComponent text={props.title} />
             </div>
-            <div>
-            {props.data.products &&
-          props.data.products
-            .slice(0, 10)
-            .map((product) => (
-              <ProductComponent
-                title={product.title}
-                imageSRC={product.image}
-                category={product.category}
-                key={product.id}
-                id={product.id}
-              />
-            ))}
-            </div>
+            <Link to={`/products/${props.data.id}`} >
+                <div>
+                    <img src={props.data.image} alt={props.data.title} />
+                    <div>
+                        <p>{props.data.title}</p>
+                        <span>{props.data.price}</span>
+                    </div>
+                </div>
+            </Link>
         </div>
     )
 }
 
-export default ProductContainer
+export default ProductsContainer

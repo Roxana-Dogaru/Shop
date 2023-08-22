@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import TopNavContainer from "../containers/TopNavContainer";
-import CategoryContainer from "../containers/CategoryContainer";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CategoryPage = () => {
   let { categoryName } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
@@ -20,15 +20,30 @@ const CategoryPage = () => {
   return (
     <>
       <TopNavContainer noSearchBar={true} />
-      {data.products &&
-        data.products.map((item) => (
-          <CategoryContainer
-            key={item.id}            
-            title={item.title}
-            image={item.image}           
-            data={item}
-          />
-        ))}
+      
+       
+        <div className="container p-4">
+          <div className="row">
+            {data.map(data =>(
+              <Link to={`/products/${data.id}`} >
+                <figure key={data.id} className="figure col d-flex flex-column justify-content-end border m-2">
+                  <img className="card-img-top"  src={data.image} alt={data.title} 
+                  ></img>
+                  <div>
+                    {data.title}
+                  </div>
+                  <div>
+                    {data.price}
+                  </div>                
+                  
+                </figure>
+              </Link>               
+            ))}
+            
+        
+          </div>
+        </div>  
+     
     </>
   );
 };
