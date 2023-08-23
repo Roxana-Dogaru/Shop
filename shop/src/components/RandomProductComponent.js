@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 const style= {
   image: {
-    width: 100,
-    height: 100
+    width: 200,
+    height: 200,   
 
   }
 }
+ 
 const RandomProductComponent = () => {
     const [product, setProduct] = useState([]);
   
@@ -20,37 +21,28 @@ const RandomProductComponent = () => {
       fetchData();
     }, []);
     return (
-      
-       
-        <div className="container p-4">
-          <div className="row">
-            {product.map(product =>(
-              <Link to={`/products/${product.id}`} >
-                <figure key={product.id} className="figure col d-flex flex-column justify-content-end border m-2">
-                  <img className="card-img-top"  src={product.image} alt={product.title} 
+       <div className="container p-4">
+        <div className="row">
+          {product.map(product =>(
+            
+              <div className=" col d-flex flex-column justify-content-end ">
+                <Link to={`/products/${product.id}`} >
+                <figure key={product.id} className="figure border rounded m-2 ">
+                  <img className="figure-img m-3"  src={product.image} alt={product.title} 
                   style={style.image}></img>
-                  <div>
-                    {product.title}
-                  
-                  </div>
-                  <div>
-                    {product.price}
-                  </div>                
-                  
+                  <figcaption className="figure-caption">
+                    <p>{product.title}</p>
+                    <p className="fs-5 fw-bold">{product.price}<span> EUR</span></p>
+                  </figcaption>
                 </figure>
-              </Link>
-                              
-            ))}
+                </Link>
+              </div>                
+                                          
+          ))}        
+        </div>
+      </div>     
         
-          </div>
-        </div>  
-       
-        
-        
-          
-        
-      );
-    };
-    
-    export default RandomProductComponent;
+    );
+  };
+export default RandomProductComponent;
     
