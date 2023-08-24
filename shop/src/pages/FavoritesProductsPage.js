@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from "react";
 import TopNavContainer from "../containers/TopNavContainer";
 import FavoritesProductsContainer from "../containers/FavoritesProductsContainer";
+import FooterContainer from "../containers/FooterContainer";
 
 const FavoritesProductsPage = () => {
   const [products, setProducts] = useState ([{}]);
@@ -12,7 +13,7 @@ const FavoritesProductsPage = () => {
       
         <FavoritesProductsContainer products={products} />
         
-      
+        <FooterContainer />
       </>
       
     );

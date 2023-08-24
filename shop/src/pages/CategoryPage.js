@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TopNavContainer from "../containers/TopNavContainer";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FooterContainer from "../containers/FooterContainer";
 
 const style= {
   image: {
@@ -50,7 +51,7 @@ const CategoryPage = () => {
         
           </div>
         </div>  
-     
+      <FooterContainer />
     </>
   );
 };

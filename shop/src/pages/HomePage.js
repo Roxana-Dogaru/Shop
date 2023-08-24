@@ -4,6 +4,7 @@ import TopNavContainer from "../containers/TopNavContainer";
 import CarouselImages from "../containers/CarouselImages";
 import RandomProductsContainer from "../containers/RandomProductContainer";
 import ProductsContainer from "../containers/ProductsContainer";
+import FooterContainer from "../containers/FooterContainer";
 
 
 function HomePage () {
@@ -28,9 +29,10 @@ function HomePage () {
     return(
         <>
             <TopNavContainer searchValue={searchValue} handleInputChange={handleInputChange} /> 
-            <div><ProductsContainer data={products} title={title} /> </div>
-            <div> <CarouselImages /></div>            
-            <div> <RandomProductsContainer /> </div>
+            <ProductsContainer data={products} title={title} />
+            <CarouselImages />            
+            <RandomProductsContainer /> 
+            <FooterContainer />
 
             
         </>

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const style= {
   image: {
-    width: 200,
-    height: 200,   
+    width: 100,
+    height: 100,   
 
   }
 }
@@ -30,7 +30,7 @@ const RandomProductComponent = () => {
                 <figure key={product.id} className="figure border rounded m-2 ">
                   <img className="figure-img m-3"  src={product.image} alt={product.title} 
                   style={style.image}></img>
-                  <figcaption className="figure-caption">
+                  <figcaption className="figure-caption ">
                     <p>{product.title}</p>
                     <p className="fs-5 fw-bold">{product.price}<span> EUR</span></p>
                   </figcaption>
