@@ -20,18 +20,15 @@ const ProductPage = () => {
   return (
     <>
       <TopNavContainer noSearchBar={true} />
-      
-          <figure key={data.id} className="figure col d-flex flex-column justify-content-end border m-2">
-          <img className="card-img-top"  src={data.image} alt={data.title} 
-          ></img>
-          <div>
-            {data.title}
-          </div>
-          <div>
-            {data.price}
-          </div>                
+        <ProductContainer 
+           key={data.id}
+           title={data.title}
+           image={data.image}
+           price={data.price}
+           data={data}
+        />                
           
-        </figure>
+       
         
     </>
   );

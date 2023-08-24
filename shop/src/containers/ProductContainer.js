@@ -1,7 +1,15 @@
 import React, {useEffect, useState} from "react";
 import ButtonComponent from "../components/ButtonComponent";
 
-const ProductContainer = ({title, image, data}) => {
+const style= {
+  image: {
+    width: 400,
+    height: 400,   
+
+  }
+}
+
+const ProductContainer = ({title, image, data, price}) => {
 
     const productDataFromLocalStorage = JSON.parse(localStorage.getItem("products")) || [{}];
     const [productData, setProductData] = useState(productDataFromLocalStorage);
@@ -16,6 +24,7 @@ const ProductContainer = ({title, image, data}) => {
             {
               title,
               image,
+              price,
               id: data.id,
             },
           ]);
@@ -27,18 +36,27 @@ const ProductContainer = ({title, image, data}) => {
       }, [productData]);
 
     return (
-        <>
-            <div>
-                <div>
-                    <h2>{title}</h2>
-                    <div>
-                    <ButtonComponent type={"success"} text={text} onClickEvent={handleAddToFavorites} />
-                    </div>
-                </div>
+      <>
+        <div className="d-flex">
+          <img className="figure-img m-5"  src={data.image} alt={data.title} 
+            style={style.image}>
+          </img>
+          <div className="w-50 m-5">
+            <h2>{title}</h2>
+            <div className="d-flex my-3">
+              <p className="d-flex fs-5 fw-bold justify-content-center ">{data.price}<span> EUR</span></p>
+              <ButtonComponent type={"success"} text={text} onClickEvent={handleAddToFavorites} />
             </div>
-            <div>
+            <div className="my-5">
+              <p>{data.description}</p>
+            </div>
+          </div>
 
-            </div>
+        </div>
+        
+          
+            
+          
         </>
     )
 }

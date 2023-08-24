@@ -35,14 +35,14 @@ const CategoryPage = () => {
             {data.map(data =>(
               <div className=" col d-flex flex-column justify-content-end ">
               <Link to={`/products/${data.id}`} >
-              <figure key={data.id} className="figure border rounded m-2 ">
-                <img className="figure-img m-3"  src={data.image} alt={data.title} 
-                style={style.image}></img>
-                <figcaption className="figure-caption">
-                  <p>{data.title}</p>
-                  <p className="fs-5 fw-bold">{data.price}<span> EUR</span></p>
-                </figcaption>
-              </figure>
+                <figure key={data.id} className="figure border rounded m-2 ">
+                  <img className="figure-img m-3"  src={data.image} alt={data.title} 
+                  style={style.image}></img>
+                  <figcaption className="figure-caption">
+                    <p>{data.title}</p>
+                    <p className="fs-5 fw-bold">{data.price}<span> EUR</span></p>
+                  </figcaption>
+                </figure>
               </Link>
               </div>                
             ))}

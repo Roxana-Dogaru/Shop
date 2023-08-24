@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 import TopNavContainer from "../containers/TopNavContainer";
+import FavoritesProductsContainer from "../containers/FavoritesProductsContainer";
 
 const FavoritesProductsPage = () => {
+  const [products, setProducts] = useState ([{}]);
+  useEffect (() => setProducts (JSON.parse(localStorage.getItem("products"))), []);
   
     return (
       <>
-        <TopNavContainer />
-      <div >
-        <h1 >this will be the favorite products page</h1>
+        <TopNavContainer noSearchBar={true}/>
+      
+        <FavoritesProductsContainer products={products} />
         
-      </div>
+      
       </>
       
     );
