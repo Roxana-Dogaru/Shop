@@ -21,7 +21,7 @@ function MenuBarComponent() {
   
     return (
       <>
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around mt-3">
         
         {categories.map(category =>(
            <Link to={`/category/${category}`}>

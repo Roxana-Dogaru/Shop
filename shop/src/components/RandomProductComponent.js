@@ -6,6 +6,9 @@ const style= {
     width: 100,
     height: 100,   
 
+  },
+  text:{
+    height: 80 ,
   }
 }
  
@@ -30,9 +33,9 @@ const RandomProductComponent = () => {
                 <figure key={product.id} className="figure border rounded m-2 ">
                   <img className="figure-img m-3"  src={product.image} alt={product.title} 
                   style={style.image}></img>
-                  <figcaption className="figure-caption ">
-                    <p>{product.title}</p>
-                    <p className="fs-5 fw-bold">{product.price}<span> EUR</span></p>
+                  <figcaption className="figure-caption " >
+                    <p className="text-center" style={style.text}>{product.title}</p>
+                    <p className="fs-5 fw-bold text-end">{product.price}<span> EUR</span></p>
                   </figcaption>
                 </figure>
                 </Link>

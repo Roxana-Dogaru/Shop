@@ -6,9 +6,12 @@ import FooterContainer from "../containers/FooterContainer";
 
 const style= {
   image: {
-    width: 200,
-    height: 200,   
+    width: 150,
+    height: 150,   
 
+  },
+  text:{
+    height: 80 ,
   }
 }
 
@@ -40,8 +43,8 @@ const CategoryPage = () => {
                   <img className="figure-img m-3"  src={data.image} alt={data.title} 
                   style={style.image}></img>
                   <figcaption className="figure-caption">
-                    <p>{data.title}</p>
-                    <p className="fs-5 fw-bold">{data.price}<span> EUR</span></p>
+                  <p className="text-center" style={style.text}>{data.title}</p>
+                    <p className="fs-5 fw-bold text-end">{data.price}<span> EUR</span></p>
                   </figcaption>
                 </figure>
               </Link>

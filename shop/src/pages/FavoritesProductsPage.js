@@ -6,7 +6,7 @@ import FooterContainer from "../containers/FooterContainer";
 const FavoritesProductsPage = () => {
   const [products, setProducts] = useState ([{}]);
   useEffect (() => setProducts (JSON.parse(localStorage.getItem("products"))), []);
-  
+   
     return (
       <>
         <TopNavContainer noSearchBar={true}/>

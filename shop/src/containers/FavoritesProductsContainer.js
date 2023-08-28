@@ -3,10 +3,11 @@ import ProductComponent from "../components/ProductComponent";
 
 
 const FavoritesProductsContainer = ({products}) => {
+  
   return (
     <>
       <div className="px-4 py-5 my-5 text-center">
-    <h1 className="display-5 fw-bold">Your favorite Products!</h1>
+        <h1 className="display-5 fw-bold">Your favorite Products!</h1>
       </div> 
         {products.map((product) => (
            <ProductComponent

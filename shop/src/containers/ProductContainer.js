@@ -3,8 +3,8 @@ import ButtonComponent from "../components/ButtonComponent";
 
 const style= {
   image: {
-    width: 400,
-    height: 400,   
+    maxWidth: 250,
+    maxHeight: 250,   
 
   }
 }
@@ -37,8 +37,9 @@ const ProductContainer = ({title, image, data, price}) => {
 
     return (
       <>
-        <div className="d-flex">
-          <img className="figure-img m-5"  src={data.image} alt={data.title} 
+      
+        <div className="row col-md">
+          <img className="figure-img m-5 img-fluid"  src={data.image} alt={data.title} 
             style={style.image}>
           </img>
           <div className="w-50 m-5">

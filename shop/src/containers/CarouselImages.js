@@ -8,12 +8,12 @@ import electronics from "../assets/img/electronics.jpg";
 
 const CarouselImages = () => {
   return (
-    <div style={{ display: 'block',  padding: 30,}}>
+    <div style={{ display: 'block',  padding: 20,}}>
       
       <Carousel >
-        <Carousel.Item interval={7500}>
+        <Carousel.Item interval={7500} style={{ height: 300, }} >
           <img
-            className="d-block w-100"
+            className="d-block, w-100 " 
             src={women}
             alt="women"
           />
@@ -22,7 +22,7 @@ const CarouselImages = () => {
             <p>Sample Text for Image One</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={5500}>
+        <Carousel.Item interval={5500} style={{ height: 300}}>
           <img
             className="d-block w-100"
             src={men}
@@ -33,7 +33,7 @@ const CarouselImages = () => {
             <p>Sample Text for Image Two</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={5500}>
+        <Carousel.Item interval={5500} style={{ height: 300}}>
           <img
             className="d-block w-100"
             src={jewelry}
@@ -44,7 +44,7 @@ const CarouselImages = () => {
             <p>Sample Text for Image Two</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={5500}>
+        <Carousel.Item interval={5500} style={{ height: 300}}> 
           <img
             className="d-block w-100"
             src={electronics}
