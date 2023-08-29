@@ -4,9 +4,9 @@ import FavoritesProductsContainer from "../containers/FavoritesProductsContainer
 import FooterContainer from "../containers/FooterContainer";
 
 const FavoritesProductsPage = () => {
-  const [products, setProducts] = useState ([{}]);
-  useEffect (() => setProducts (JSON.parse(localStorage.getItem("products"))), []);
-   
+  const [products, setProducts] = useState ([{}]); 
+  useEffect (() => setProducts (JSON.parse(localStorage.getItem("products"))), []) 
+    
     return (
       <>
         <TopNavContainer noSearchBar={true}/>
@@ -17,6 +17,7 @@ const FavoritesProductsPage = () => {
       </>
       
     );
+  
   };
 
 export default FavoritesProductsPage

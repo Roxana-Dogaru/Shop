@@ -3,12 +3,21 @@ import ProductComponent from "../components/ProductComponent";
 
 
 const FavoritesProductsContainer = ({products}) => {
+  if(products.length === 1){
+    return (
+    <div className="px-4 py-5 my-5 text-center"> 
+      <h1 className="display-5 fw-bold m-3">Your favorite Products!</h1>
+      <h1 className="display-6 fw-bold m-3"> No items added yet 😔</h1>
+    </div>)
+    
+  }else {
   
   return (
     <>
-      <div className="px-4 py-5 my-5 text-center">
+      <div className="px-4 py-5 my-4 text-center">
         <h1 className="display-5 fw-bold">Your favorite Products!</h1>
       </div> 
+      <div className="d-flex">
         {products.map((product) => (
            <ProductComponent
             title={product.title}
@@ -18,9 +27,11 @@ const FavoritesProductsContainer = ({products}) => {
             id={product.id}
            />
          ))}
+      </div>
+         
         
     </>
-  )
+  )}
 }
 
 export default FavoritesProductsContainer
