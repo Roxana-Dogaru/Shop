@@ -3,30 +3,30 @@ import TitleComponent from "../components/TitleComponent";
 import { Link } from "react-router-dom";
 
 function ProductsContainer  (props)  {
-    if (props.data.id === ""){
-        return <div> </div>
-    }else {
+    
     return (
         <div>
-            <div>
+            <div className="mx-4">
                 <TitleComponent text={props.title} />
             </div>
             <Link to={`/products/${props.data.id}`} >
-                <div >
-                    <div >
-                        <img src={props.data.image} alt={props.data.title} className="img-fluid "
+               
+                    <div className="text-center w-25 mx-5">
+                        <img src={props.data.image} alt={props.data.title} className=" img-fluid w-25"
                             />
                         <div>
-                            <p>{props.data.title}</p>
-                            <span>{props.data.price}</span>
+                            <p className="text-center" >{props.data.title}</p>
+                            {/*
+                            <p className="fs-5 fw-bold text-end">{props.data.price}</p>
+                             */}
                         </div>
                     </div>
 
-                </div>
+            
             </Link>
         </div>
     )
-    }
+    
 }
 
 export default ProductsContainer
