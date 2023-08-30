@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../assets/img/logo.jpg";
 import home from "../assets/img/home.png";
-import heart from "../assets/img/heart.png"
+import heart from "../assets/img/heart.png";
+import shoppingCart from "../assets/img/shoppingCart.png";
 import { Link} from "react-router-dom";
 import MenuBarComponent from "../components/MenuBarComponent";
 
@@ -50,6 +51,12 @@ const TopNavContainer = ({ searchValue, handleInputChange, noSearchBar })  => {
                 <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
                     <Link to="/favorites" >
                     <img src={heart} className="img-fluid "  alt="heart" />
+                    </Link>
+                
+                </div>
+                <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
+                    <Link to="/shoppingCart" >
+                    <img src={shoppingCart} className="img-fluid "  alt="shoppingCart" />
                     </Link>
                 
                 </div>
