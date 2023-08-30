@@ -17,8 +17,8 @@ function ProductComponent (props) {
       <div className="row">
         <div className=" col d-flex flex-column justify-content-end ">
           <Link to={`/products/${props.id}`}>
-            <figure key={props.id} className="figure border rounded, m-2 ">
-              <img className="figure-img m-3"  src={props.image} alt={props.title} 
+            <figure key={props.id} className="figure border rounded m-2">
+              <img className="figure-img m-3 text-center"  src={props.image} alt={props.title} 
                 style={style.image}></img>
               <figcaption className="figure-caption">
                 <p className="text-center" style={style.text}>{props.title}</p>

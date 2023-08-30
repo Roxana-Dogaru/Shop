@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/img/logo.jpg";
-import home from "../assets/img/home.png";
 import heart from "../assets/img/heart.png";
 import shoppingCart from "../assets/img/shoppingCart.png";
 import { Link} from "react-router-dom";
@@ -40,13 +39,6 @@ const TopNavContainer = ({ searchValue, handleInputChange, noSearchBar })  => {
                         </form>
                     </div>
                 ):("")}
-                </div>
-                
-                <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
-                    <Link to="/" >
-                    <img src={home} className="img-fluid "  alt="home" />
-                    </Link>
-                
                 </div>
                 <div className="btn bg-white " style={{ width: "60px", height: "40px" }}>
                     <Link to="/favorites" >

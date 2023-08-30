@@ -40,11 +40,12 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                       <p className="fs-5 fw-bold text-end">{productCart.price} EUR</p>
                     </div>
                   </div>
-
+                  <hr></hr>
                   </Link> 
+                 
                   
                  ))}
-                 <hr></hr>
+                 
                 
                  <div className="text-end">
                   <Button variant="success" onClick={handleShow}>Buy</Button>
