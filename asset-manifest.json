@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Shop/shop/static/css/main.ec6f173c.css",
-    "main.js": "/Shop/shop/static/js/main.11a56d86.js",
-    "static/js/787.23170c61.chunk.js": "/Shop/shop/static/js/787.23170c61.chunk.js",
-    "static/media/jewelry.jpg": "/Shop/shop/static/media/jewelry.5c44d3045db7d0d9e1ff.jpg",
-    "static/media/women.jpg": "/Shop/shop/static/media/women.91a3cccc30ece9ef14db.jpg",
-    "static/media/electronics.jpg": "/Shop/shop/static/media/electronics.3c0418fd0068f6a7a158.jpg",
-    "static/media/men.jpg": "/Shop/shop/static/media/men.d2ebd5f9d748243c6b29.jpg",
-    "static/media/logo.jpg": "/Shop/shop/static/media/logo.9ac3da4f7340a031e2ed.jpg",
-    "static/media/jewelry.png": "/Shop/shop/static/media/jewelry.c8c4a69e73e1d12ed89c.png",
-    "static/media/shirt.png": "/Shop/shop/static/media/shirt.22f7efe40b3bdb318efa.png",
-    "static/media/dress.png": "/Shop/shop/static/media/dress.4eff0811363ebc4ada60.png",
-    "static/media/heart.png": "/Shop/shop/static/media/heart.9979f61f3826c693728f.png",
-    "index.html": "/Shop/shop/index.html",
-    "main.ec6f173c.css.map": "/Shop/shop/static/css/main.ec6f173c.css.map",
-    "main.11a56d86.js.map": "/Shop/shop/static/js/main.11a56d86.js.map",
-    "787.23170c61.chunk.js.map": "/Shop/shop/static/js/787.23170c61.chunk.js.map"
+    "main.css": "/Shop/static/css/main.ec6f173c.css",
+    "main.js": "/Shop/static/js/main.105f794d.js",
+    "static/js/787.23170c61.chunk.js": "/Shop/static/js/787.23170c61.chunk.js",
+    "static/media/jewelry.jpg": "/Shop/static/media/jewelry.5c44d3045db7d0d9e1ff.jpg",
+    "static/media/women.jpg": "/Shop/static/media/women.91a3cccc30ece9ef14db.jpg",
+    "static/media/electronics.jpg": "/Shop/static/media/electronics.3c0418fd0068f6a7a158.jpg",
+    "static/media/men.jpg": "/Shop/static/media/men.d2ebd5f9d748243c6b29.jpg",
+    "static/media/logo.jpg": "/Shop/static/media/logo.9ac3da4f7340a031e2ed.jpg",
+    "static/media/jewelry.png": "/Shop/static/media/jewelry.c8c4a69e73e1d12ed89c.png",
+    "static/media/shirt.png": "/Shop/static/media/shirt.22f7efe40b3bdb318efa.png",
+    "static/media/dress.png": "/Shop/static/media/dress.4eff0811363ebc4ada60.png",
+    "static/media/heart.png": "/Shop/static/media/heart.9979f61f3826c693728f.png",
+    "index.html": "/Shop/index.html",
+    "main.ec6f173c.css.map": "/Shop/static/css/main.ec6f173c.css.map",
+    "main.105f794d.js.map": "/Shop/static/js/main.105f794d.js.map",
+    "787.23170c61.chunk.js.map": "/Shop/static/js/787.23170c61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec6f173c.css",
-    "static/js/main.11a56d86.js"
+    "static/js/main.105f794d.js"
   ]
 }
