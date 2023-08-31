@@ -16,7 +16,7 @@ const ProductContainer = ({title, image, data, price}) => {
   const [text, setText] = useState("♡ Add to Favorites");
 
   const productDataCartFromLocalStorage = JSON.parse(localStorage.getItem("productsCart")) || [{}];
-  const [productDataCart, setProductDataCart] = useState(productDataFromLocalStorage);
+  const [productDataCart, setProductDataCart] = useState(productDataCartFromLocalStorage);
   const [textCart, setTextCart] = useState("♡ Add to shopping cart");
 
   const handleAddToFavorites = () => {        

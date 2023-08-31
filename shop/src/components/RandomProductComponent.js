@@ -28,7 +28,7 @@ const RandomProductComponent = () => {
         <div className="row">
           {product.map(product =>(
             
-              <div className=" col d-flex flex-column justify-content-end ">
+              <div className=" col d-flex flex-column justify-content-end" >
                 <Link to={`/products/${product.id}`} >
                 <figure key={product.id} className="figure border rounded m-2 ">
                   <img className="figure-img m-3"  src={product.image} alt={product.title} 

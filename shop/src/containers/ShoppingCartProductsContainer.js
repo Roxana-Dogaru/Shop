@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, } from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -10,10 +10,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const handleDeleteSoppingCart = () => {
-    localStorage.removeItem("productsCart")
-  }
+   
 
     if(productsCart.length === 1){
       return (
@@ -29,6 +26,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                 <h1 className="display-5 fw-bold">Your shopping list!</h1>
               </div> 
               <div className="m-3 w-50 m-auto">
+                
               
                 {productsCart.map((productCart) => (
                   <Link to={`/products/${productCart.id}`}>
@@ -47,7 +45,8 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                  ))}
                  
                 
-                 <div className="text-end">
+                 <div className="d-flex justify-content-between">
+                 <Button variant="danger" >Remove</Button>
                   <Button variant="success" onClick={handleShow}>Buy</Button>
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
@@ -70,7 +69,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                  ))}
                     </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose} onClickEvent={handleDeleteSoppingCart}>
+                      <Button variant="secondary" onClick={handleClose} >
                         Close
                       </Button>
                       
@@ -86,6 +85,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                 
             </>
     )}
+  
 }
 
 export default ShoppingCartProductsContainer
