@@ -13,22 +13,16 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename='/Shop'>
       <Routes>
-        <Route>
           <Route path="/" element={<HomePage />} />          
           <Route path="/products" element={<HomePage />} />
           <Route path="/products/:id" element={<ProductPage />} />         
           <Route path="/favorites" element={<FavoritesProductsPage />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/shoppingCart" element={<ShoppingCartPage />} />
-
-        </Route>
-
       </Routes>
-    
     </BrowserRouter>
-    
 );
 }
 
