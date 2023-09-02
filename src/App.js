@@ -13,7 +13,7 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename='/Shop'>
       <Routes>
           <Route path="/" element={<HomePage />} />          
           <Route path="/products" element={<HomePage />} />
