@@ -15,18 +15,19 @@ function ProductComponent (props) {
   return (
     <div className="container">
       <div className="row">
-        <div className=" col d-flex flex-column justify-content-end ">
-          <Link to={`/products/${props.id}`}>
-            <figure key={props.id} className="figure border rounded m-2">
-              <img className="figure-img m-3 text-center"  src={props.image} alt={props.title} 
-                style={style.image}></img>
-              <figcaption className="figure-caption">
-                <p className="text-center" style={style.text}>{props.title}</p>
-                <p className="fs-5 fw-bold text-end">{props.price}<span> EUR</span></p>
-              </figcaption>
-            </figure>
-          </Link> 
-        </div>
+      <div className=" col d-flex flex-column justify-content-end" >
+                <Link className="text-decoration-none" to={`/products/${props.id}`} >
+                  <div className="card m-3 text-center" style={{width: "150px"}}>
+                    <img src={props.image} alt={props.title} 
+                    className="card-img-top mx-auto my-1" style={style.image}></img>
+                  <div className="card-body fs-6 ">
+                    <h5 className="card-title fs-6">{props.title.slice(0,20)}</h5>
+                    <p className="card-text text-end">{props.price} EUR</p>
+                  </div>
+
+                  </div>
+                </Link>
+              </div>
       </div>
     </div>    
   )

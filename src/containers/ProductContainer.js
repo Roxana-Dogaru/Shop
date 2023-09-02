@@ -32,6 +32,7 @@ const ProductContainer = ({title, image, data, price}) => {
       ]);
       setText("♡ Added");
   };
+  
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(productData));
@@ -55,13 +56,17 @@ const ProductContainer = ({title, image, data, price}) => {
     localStorage.setItem("productsCart", JSON.stringify(productDataCart));
   }, [productDataCart]);
 
+
   return (
     <>      
-      <div className="row col-md">
+      <div className="d-md-flex">
+        <div>
         <img className="figure-img m-5 img-fluid"  src={data.image} alt={data.title} 
           style={style.image}>
         </img>
-        <div className="w-50 m-5">
+        </div>
+       
+        <div className=" m-5">
           <div className="d-flex justify-content-around">
             <ButtonComponent  type={"success"} text={textCart} onClickEvent={handleAddToShoppingCart} />
             <ButtonComponent type={"success"} text={text} onClickEvent={handleAddToFavorites} />
