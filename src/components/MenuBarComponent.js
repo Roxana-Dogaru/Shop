@@ -26,22 +26,22 @@ function MenuBarComponent() {
     return (
       <>
         <div className="d-flex justify-content-between d-block d-md-none mx-3">
-        <div className="d-flex"  style={{ width: "60px", height: "60px" }} >
+        <div className="d-flex"  style={{ width: "50px", height: "50px" }} >
           <Link to={`/category/${"electronics"}`} >
             <img src={electronics} className="img-fluid "  alt="electronics" />
           </Link>
         </div>
-        <div className=""  style={{ width: "60px", height: "60px" }} >
+        <div className=""  style={{ width: "50px", height: "50px" }} >
           <Link to={`/category/${"jewelery"}`}>
             <img src={jewelry} className="img-fluid "  alt="jewelry" />
           </Link>
         </div>
-        <div className=""  style={{ width: "60px", height: "60px" }} >
+        <div className=""  style={{ width: "50px", height: "50px" }} >
           <Link to={`/category/${"women's clothing"}`}>
             <img src={dress} className="img-fluid "  alt="dress" />
           </Link>
           </div>
-          <div className=""  style={{ width: "60px", height: "60px" }} >
+          <div className=""  style={{ width: "50px", height: "50px" }} >
           <Link to={`/category/${"men's clothing"}`}>
             <img src={shirt} className="img-fluid "  alt="shirt" />
           </Link>

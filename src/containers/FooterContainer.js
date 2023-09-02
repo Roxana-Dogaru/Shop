@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 const FooterContainer= () => {
     return (
-        <div className="d-flex justify-content-around m-5">
+        <div className="d-sm-flex justify-content-around m-5">
             <div className="d-flex align-items-center">
                 <MenuBarComponent />
             </div>
-            <div>
+            <div className="d-xs-flex align-items-center">
                 <h5>Hey, follow us on:</h5>
                 
                 <Link to="https://www.facebook.com/">

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const style= {
   image: {
-    width: 100,
-    height: 100,   
+    width: 130 ,
+    height: 130,   
 
   },
   text:{
@@ -29,15 +29,16 @@ const RandomProductComponent = () => {
           {product.map(product =>(
             
               <div className=" col d-flex flex-column justify-content-end" >
-                <Link to={`/products/${product.id}`} >
-                <figure key={product.id} className="figure border rounded m-2 ">
-                  <img className="figure-img m-3"  src={product.image} alt={product.title} 
-                  style={style.image}></img>
-                  <figcaption className="figure-caption " >
-                    <p className="text-center" style={style.text}>{product.title}</p>
-                    <p className="fs-5 fw-bold text-end">{product.price}<span> EUR</span></p>
-                  </figcaption>
-                </figure>
+                <Link className="text-decoration-none" to={`/products/${product.id}`} >
+                  <div className="card m-3 text-center" style={{width: "150px"}}>
+                  <img src={product.image} alt={product.title} 
+                   className="card-img-top mx-auto my-1" style={style.image}></img>
+                  <div className="card-body fs-6 ">
+                    <h5 className="card-title fs-6">{product.title.slice(0,20)}</h5>
+                    <p className="card-text text-end">{product.price} EUR</p>
+                  </div>
+
+                  </div>
                 </Link>
               </div>                
                                           

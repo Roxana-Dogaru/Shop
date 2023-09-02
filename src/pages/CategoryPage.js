@@ -6,8 +6,8 @@ import FooterContainer from "../containers/FooterContainer";
 
 const style= {
   image: {
-    width: 150,
-    height: 150,   
+    width: 130,
+    height: 130,   
 
   },
   text:{
@@ -38,15 +38,15 @@ const CategoryPage = () => {
           <div className="row">
             {data.map(data =>(
               <div className=" col d-flex flex-column justify-content-end ">
-              <Link to={`/products/${data.id}`} >
-                <figure key={data.id} className="figure border rounded m-2 ">
-                  <img className="figure-img m-3"  src={data.image} alt={data.title} 
-                  style={style.image}></img>
-                  <figcaption className="figure-caption">
-                  <p className="text-center" style={style.text}>{data.title}</p>
-                    <p className="fs-5 fw-bold text-end">{data.price}<span> EUR</span></p>
-                  </figcaption>
-                </figure>
+              <Link className="text-decoration-none" to={`/products/${data.id}`} >
+                <div className="card m-3 text-center" style={{width: "150px"}}>
+                    <img src={data.image} alt={data.title} 
+                    className="card-img-top mx-auto my-1" style={style.image}></img>
+                    <div className="card-body fs-6 ">
+                      <h5 className="card-title fs-6">{data.title.slice(0,20)}</h5>
+                      <p className="card-text text-end">{data.price} EUR</p>
+                    </div>
+                </div>
               </Link>
               </div>                
             ))}

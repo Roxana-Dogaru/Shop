@@ -17,9 +17,9 @@ const CarouselImages = () => {
             src={women}
             alt="women"
           />
-          <Carousel.Caption>
-            <h3>Label for first slide</h3>
-            <p>Sample Text for Image One</p>
+          <Carousel.Caption className="d-none d-md-block" >
+            <h3 style={{color: "black", fontSize:"36px"}} className=" text-end fw-bold">Discover fashion trends</h3>
+            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5500} style={{ height: 300}}>
@@ -28,9 +28,9 @@ const CarouselImages = () => {
             src={men}
             alt="men"
           />
-          <Carousel.Caption>
-            <h3>Label for second slide</h3>
-            <p>Sample Text for Image Two</p>
+          <Carousel.Caption className="d-none d-md-block">
+            <h3 style={{color: "black",fontSize:"36px" }} className="text-start fw-bold">Discover fashion trends</h3>
+            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5500} style={{ height: 300}}>
@@ -39,9 +39,9 @@ const CarouselImages = () => {
             src={jewelry}
             alt="jewelry"
           />
-          <Carousel.Caption>
-            <h3>Label for second slide</h3>
-            <p>Sample Text for Image Two</p>
+          <Carousel.Caption className="d-none d-md-block">
+            <h3 style={{color: "black", fontSize:"36px"}} className="text-start fw-bold">New arrivals in Jewelry</h3>
+            
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5500} style={{ height: 300}}> 
@@ -50,9 +50,9 @@ const CarouselImages = () => {
             src={electronics}
             alt="electronics"
           />
-          <Carousel.Caption>
-            <h3>Label for second slide</h3>
-            <p>Sample Text for Image Two</p>
+          <Carousel.Caption className="d-none d-md-block">
+            <h3 style={{color: "black", fontSize:"36px"}} className="text-start fw-bold">New arrivals in Electronics</h3>
+            
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
