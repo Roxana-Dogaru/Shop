@@ -34,7 +34,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                     <img src={productCart.image} alt={productCart.title} 
                       style={{height: "150px",}}/>
                     <div style={{color:"black"}}>
-                      <h3 className="fs-5 fw-bold text-end">{productCart.title.slice(0,20)}</h3>
+                      <h3 className="fs-5 fw-bold text-end">{productCart.title}</h3>
                       <p className="fs-5 fw-bold text-end">{productCart.price} EUR</p>
                     </div>
                   </div>
