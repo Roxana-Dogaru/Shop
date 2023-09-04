@@ -3,6 +3,7 @@ import ProductComponent from "../components/ProductComponent";
 
 
 const FavoritesProductsContainer = ({products}) => {
+  const newProducts = products.slice(1);
   if(products.length === 1){
     return (
     <div className="px-4 py-5 my-5 text-center"> 
@@ -18,7 +19,7 @@ const FavoritesProductsContainer = ({products}) => {
         <h1 className="display-5 fw-bold">Your favorite Products!</h1>
       </div> 
       <div className="d-flex">
-        {products.map((product) => (
+        {newProducts.map((product) => (
            <ProductComponent
             title={product.title}
             image={product.image}

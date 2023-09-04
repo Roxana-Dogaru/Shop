@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 
 
 const ShoppingCartProductsContainer = ({productsCart}) => {
+  const newProductsCart = productsCart.slice(1);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -28,13 +29,13 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
               <div className="m-3 w-50 m-auto">
                 
               
-                {productsCart.map((productCart) => (
+                {newProductsCart.map((productCart) => (
                   <Link className="text-decoration-none" to={`/products/${productCart.id}`}>
                   <div className="d-flex justify-content-around m-3 ">
                     <img src={productCart.image} alt={productCart.title} 
                       style={{height: "150px",}}/>
                     <div style={{color:"black"}}>
-                      <h3 className="fs-5 fw-bold text-end">{productCart.title}</h3>
+                      <h3 className="fs-5 fw-bold text-end">{productCart.title.slice(0,20)}...</h3>
                       <p className="fs-5 fw-bold text-end">{productCart.price} EUR</p>
                     </div>
                   </div>
@@ -45,7 +46,7 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                  ))}
                  
                 
-                 <div className="d-flex justify-content-between">
+                 <div className="d-flex justify-content-end">
                  
                   <Button variant="success" onClick={handleShow}>Buy</Button>
                   <Modal show={show} onHide={handleClose}>
@@ -53,13 +54,13 @@ const ShoppingCartProductsContainer = ({productsCart}) => {
                       <Modal.Title>Order completed</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    {productsCart.map((productCart) => (
+                    {newProductsCart.map((productCart) => (
                   <>
                   <div className="d-flex justify-content-around m-3 ">
                     <img src={productCart.image} alt={productCart.title} 
                       style={{height: "50px",}}/>
                     <div>
-                      <p className="fs-6 fw-bold text-end">{productCart.title.slice(0,20)}</p>
+                      <p className="fs-6 fw-bold text-end">{productCart.title.slice(0,20)}...</p>
                       <p className="fs-6 fw-bold text-end">{productCart.price} EUR</p>
                     </div>
                     <hr></hr>

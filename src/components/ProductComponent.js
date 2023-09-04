@@ -21,7 +21,7 @@ function ProductComponent (props) {
                     <img src={props.image} alt={props.title} 
                     className="card-img-top mx-auto my-1" style={style.image}></img>
                   <div className="card-body fs-6 ">
-                    <h5 className="card-title fs-6">{props.title}</h5>
+                    <h5 className="card-title fs-6">{props.title.slice(0,20)}...</h5>
                     <p className="card-text text-end">{props.price} EUR</p>
                   </div>
 
